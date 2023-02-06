@@ -1,4 +1,4 @@
-package homework2;
+package by.itacademy.courses.hw2;
 
 import java.util.Scanner;
 

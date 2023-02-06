@@ -1,7 +1,6 @@
-package homework2;
+package by.itacademy.courses.hw2;
 
 public class Task4 {
-
     public static void main(String[] args) {
         byte numByte = 127;
         short numShort = 345;

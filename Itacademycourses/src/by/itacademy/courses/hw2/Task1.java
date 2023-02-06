@@ -1,4 +1,4 @@
-package homework2;
+package by.itacademy.courses.hw2;
 
 public class Task1 {
     public static void main(String[] args) {
