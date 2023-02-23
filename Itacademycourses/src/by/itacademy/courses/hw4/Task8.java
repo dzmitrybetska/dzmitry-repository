@@ -4,7 +4,7 @@ public class Task8 {
 
     public static void main(String[] args) {
         int luckyTickets = 0;
-        for (int i = 000001; i < 1000000; i++) {
+        for (int i = 999999; i > 1; i--) {
             int num1 = i / 100000 % 10;
             int num2 = i / 10000 % 10;
             int num3 = i / 1000 % 10;
@@ -16,4 +16,5 @@ public class Task8 {
             }
         }
         System.out.println("Number of lucky tickets: " + luckyTickets);}
+
 }

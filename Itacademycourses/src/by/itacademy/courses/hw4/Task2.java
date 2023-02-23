@@ -12,8 +12,9 @@ public class Task2 {
         int mult = 1;
 
         while (digit != 0) {
-            sum += digit % 10;
-            mult *= digit % 10;
+            int result = digit % 10;
+            sum += result;
+            mult *= result;
             digit /= 10;
         }
         System.out.println("The sum of the digits of a number: " + sum);

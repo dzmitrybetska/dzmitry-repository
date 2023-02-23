@@ -8,13 +8,14 @@ public class Task5 {
 
         int minGrade = myArray [0];
 
-        for (int i = 0; i < myArray.length; i++) {
+        for (int i = 1; i < myArray.length; i = i + 2) {
 
-            if (myArray[i] < minGrade && i %2 != 0)
+            if (myArray[i] < minGrade)
                 minGrade = myArray[i];
         }
 
         System.out.println(minGrade);
 
     }
+
 }
