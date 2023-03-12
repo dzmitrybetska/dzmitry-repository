@@ -93,7 +93,8 @@ public class Main {
             System.out.println(petShop1);
         }
 
-        Collections.sort(petShop, petShopComparator());
+        petShop.sort(petShopComparator());
+
         System.out.println("\nSort by price: " + petShop);
 
         Scanner scanner = new Scanner(System.in);
