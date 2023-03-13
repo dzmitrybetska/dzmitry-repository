@@ -1,46 +1,48 @@
 package by.itacademy.courses.hw6;
 
 public class Task3 {
-
     public static void main(String[] args) {
         String text = "Я повторяю, вам этого не понять, дамы с туго набитым кошельком и кучей нарядов.";
+        String regex = "\\s*[\\s!\\.,-]\\s*";
 
-        String[] wordArray = text.split("\\s*[\\s+\\.,]\\s*");
+        String[] strings = text.split(regex);
+
+        int lengthMax = 0;
+        int lengthMin = strings[0].length();
+
         int indexMax = 0;
         int indexMin = 0;
-        int maxLength = 0;
-        int minLength = wordArray[0].length();
 
-        for (int i = 0; i < wordArray.length; i++) {
+        for (int i = 0; i < strings.length; i++) {
 
-            if (maxLength < wordArray[i].length()) {
-                maxLength = wordArray[i].length();
+            if (lengthMax < strings[i].length()) {
+                lengthMax = strings[i].length();
                 indexMax = i;
+
             }
-            if (minLength >= wordArray[i].length()) {
-                minLength = wordArray[i].length();
+            if (lengthMin >= strings[i].length()) {
+                lengthMin = strings[i].length();
                 indexMin = i;
             }
+
         }
 
-        textModification (text, indexMax, indexMin);
+        wordSubstitution (text, indexMax, indexMin);
     }
+    static void wordSubstitution (String text, int indexMax, int indexMin) {
+        String[] strings2 = text.split("\\s*[\\s\\.]\\s*");
 
-    static void textModification (String text, int indexMax, int indexMin) {
+        String s = strings2[indexMax];
+        strings2[indexMax] = strings2[indexMin];
+        strings2[indexMin] = s;
 
-        String[] newArray = text.split("\\s+");
+        StringBuilder stringBuilder = new StringBuilder();
 
-        StringBuilder textMod = new StringBuilder();
-
-        String memoryWord = newArray[indexMax];
-        newArray[indexMax] = newArray[indexMin];
-        newArray[indexMin] = memoryWord;
-
-        for (String word : newArray) {
-            textMod.append(word).append(" ");
+        for (String word : strings2) {
+            stringBuilder.append(word).append(" ");
         }
-        System.out.println(textMod);
+
+        System.out.println(stringBuilder.insert(stringBuilder.lastIndexOf(" "), "."));
 
     }
-
 }
